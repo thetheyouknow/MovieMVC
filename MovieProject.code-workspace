@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "MovieMVCEntities"
+		},
+		{
+			"path": "MovieMVCContext"
+		},
+		{
+			"path": "MovieMVCWeb"
+		},
+		{
+			"path": "MovieMVCMVC"
+		}
+	],
+	"settings": {}
+}

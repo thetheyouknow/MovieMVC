@@ -1,0 +1,28 @@
+@model MovieMVCMVC.Models.MoviesModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Details</h2>
+<div class="text-right">
+            <a asp-controller = "Movies"
+                    asp-action = "DeleteButton"
+                    asp-route-id = "@Model.SingleMovie.MovieID">
+              Delete
+            </a>
+ </div>
+<div >
+            <h3>Movie Title </br></h3>
+            <dd>@Model.SingleMovie.Title </dd>
+            <h3> Movie Director</h3>
+            <dd>
+                <a asp-controller = "Movies"
+                    asp-action = "MoviesForADirector"
+                    asp-route-id = "@Model.DirectorID">
+                    @Model.DirectorName</br>
+                </a>
+            </dd>
+            <h3> Runtime</h3>
+            <dd>@Model.SingleMovie.Runtime</dd>
+             
+</div>

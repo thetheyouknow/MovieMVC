@@ -1,0 +1,206 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCMVC/MovieMVCMVC.csproj": {}
+  },
+  "projects": {
+    "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/MovieMVCContext.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/MovieMVCContext.csproj",
+        "projectName": "MovieMVCContext",
+        "projectPath": "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/MovieMVCContext.csproj",
+        "packagesPath": "/Users/savittasivapalan/.nuget/packages/",
+        "outputPath": "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/savittasivapalan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCEntities/MovieMVCEntities.csproj": {
+                "projectPath": "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCEntities/MovieMVCEntities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SQLite": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCEntities/MovieMVCEntities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCEntities/MovieMVCEntities.csproj",
+        "projectName": "MovieMVCEntities",
+        "projectPath": "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCEntities/MovieMVCEntities.csproj",
+        "packagesPath": "/Users/savittasivapalan/.nuget/packages/",
+        "outputPath": "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCEntities/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/savittasivapalan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCMVC/MovieMVCMVC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCMVC/MovieMVCMVC.csproj",
+        "projectName": "MovieMVCMVC",
+        "projectPath": "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCMVC/MovieMVCMVC.csproj",
+        "packagesPath": "/Users/savittasivapalan/.nuget/packages/",
+        "outputPath": "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCMVC/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/savittasivapalan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/MovieMVCContext.csproj": {
+                "projectPath": "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/MovieMVCContext.csproj"
+              },
+              "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCEntities/MovieMVCEntities.csproj": {
+                "projectPath": "/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCEntities/MovieMVCEntities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

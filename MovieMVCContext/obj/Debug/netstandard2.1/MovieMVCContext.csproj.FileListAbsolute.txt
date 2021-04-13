@@ -1,0 +1,12 @@
+/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/bin/Debug/netstandard2.1/MovieMVCContext.deps.json
+/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/bin/Debug/netstandard2.1/MovieMVCContext.dll
+/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/bin/Debug/netstandard2.1/MovieMVCContext.pdb
+/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/bin/Debug/netstandard2.1/MovieMVCEntities.dll
+/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/bin/Debug/netstandard2.1/MovieMVCEntities.pdb
+/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/obj/Debug/netstandard2.1/MovieMVCContext.csprojAssemblyReference.cache
+/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/obj/Debug/netstandard2.1/MovieMVCContext.AssemblyInfoInputs.cache
+/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/obj/Debug/netstandard2.1/MovieMVCContext.AssemblyInfo.cs
+/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/obj/Debug/netstandard2.1/MovieMVCContext.csproj.CoreCompileInputs.cache
+/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/obj/Debug/netstandard2.1/MovieMVCContext.csproj.CopyComplete
+/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/obj/Debug/netstandard2.1/MovieMVCContext.dll
+/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCContext/obj/Debug/netstandard2.1/MovieMVCContext.pdb

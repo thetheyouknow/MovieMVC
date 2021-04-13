@@ -1,0 +1,37 @@
+@model MovieMVCMVC.Models.MoviesModel
+@{
+    ViewData["Title"] = "Create";
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>creation</title>
+
+</head>
+<body>
+    @using (Html.BeginForm("Create", "Movies", FormMethod.Post))
+    {
+        <table cellpadding="7" cellspacing="0">
+            <tr>
+                <th colspan="3" align="center">Create new movie; next id is @ViewData["nextID"];</th>
+            </tr>
+            <tr>
+                <td>Title: </td>
+                <td>
+                    @Html.TextBoxFor(t => t.Title)
+                </td>
+            </tr>
+            <tr>
+                <td>Runtime:  </td>
+                <td>
+                    @Html.TextBoxFor(t => t.Runtime)
+                </td>
+            </tr>
+            <tr>
+
+                <td><input type="submit" value="Submit" class="btn btn-primary"/></td>
+            </tr>
+        </table>
+    }
+</body>
+</html>

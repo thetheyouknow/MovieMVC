@@ -1,0 +1,51 @@
+﻿@model MovieMVCMVC.Models.HomeIndexViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class=btn-group >
+<form asp-controller = "Movies" asp-action="MovieSearch" method="get">
+        <input name="name" placeholder="Enter a movie name" />
+        <input type="submit" value="Search" class="btn btn-primary"/>
+    </form>
+</div>
+
+<div class="btn-group">
+    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        Genres
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu pre-scrollable" role="menu" aria-labelledby="dropdownMenu1">
+        @foreach (var item in @Model.Genres)
+        {
+            <li role="presentation"><a role="menuitem" tabindex="-1">
+                    <a asp-controller = "Movies"
+                        asp-action = "GenreSorting"
+                        asp-route-id = "@item.GenreID">
+                        @item.GenreName
+                    </a>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+<div class="btn-group">
+    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        Languages
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu pre-scrollable" role="menu" aria-labelledby="dropdownMenuButton">
+        @foreach (var item in @Model.Languages)
+        {
+            <li role="presentation"><a role="menuitem" tabindex="-1">
+                    <a asp-controller = "Movies"
+                        asp-action = "LanguageSorting"
+                        asp-route-id = "@item.LanguageID">
+                        @item.LanguageName
+                    </a>
+                </a>
+            </li>
+        }
+    </ul>
+</div>

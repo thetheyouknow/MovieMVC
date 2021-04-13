@@ -1,0 +1,36 @@
+@model MovieMVCMVC.Models.MoviesModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class= "row"
+<h1><span class="tab"></span></h1> 
+    <a  class = "btn btn-outline-primary"
+        asp-controller = "Movies"
+        asp-action = "CreateButton">    
+            Create new record
+    </a>
+</div>
+       
+
+
+<div class = "twoColumns">
+    <h1 class="display-4">Movie Index</h1>
+    <p class="lead">
+    </p>
+    @foreach (var item in @Model.Movie)
+    {
+    <ul class = "list-group">
+        <li class = "list-group-item">
+            <a asp-controller = "Movies"
+            asp-action = "Details"
+            asp-route-id = "@item.MovieID">
+            @item.Title 
+            </a>
+        </li>
+    </ul>
+    }
+</div>
+
+
+

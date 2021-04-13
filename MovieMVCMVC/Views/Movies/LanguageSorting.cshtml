@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Movies in "+ ViewData["Language"];
+}
+<h2>Movies in @ViewData["Language"]</h2>
+<div class = "twoColumns">
+    <h1 class="display-4"> </h1>
+    <p class="lead">
+    </p>
+    @foreach (var item in Model)
+    {
+    <ul class = "list-group">
+        <li class = "list-group-item">
+            <a asp-controller = "Movies"
+            asp-action = "Details"
+            asp-route-id = "@item.MovieID">
+            @item.Title 
+            </a>
+        </li>
+    </ul>
+    }
+</div>
