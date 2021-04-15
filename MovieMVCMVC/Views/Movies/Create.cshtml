@@ -17,18 +17,28 @@
             </tr>
             <tr>
                 <td>Title: </td>
-                <td>
-                    @Html.TextBoxFor(t => t.Title)
-                </td>
+                    <td>
+                        @Html.TextBoxFor(t => t.Title)
+                    </td>
             </tr>
             <tr>
                 <td>Runtime:  </td>
-                <td>
-                    @Html.TextBoxFor(t => t.Runtime)
-                </td>
+                    <td>
+                        @Html.TextBoxFor(t => t.Runtime)
+                    </td>
             </tr>
+             
+                <td>Director: </td>
+                    <td class = "dropdown">
+                        <select name="DirectorChoice">
+                            <option selected="selected"> Choose a Director</option>
+                            @foreach (var item in @Model.DirectorList)
+                            {
+                                <option value="@item.DirectorID">@item.DirectorName</option>
+                            }
+                        </select>
+                    </td>
             <tr>
-
                 <td><input type="submit" value="Submit" class="btn btn-primary"/></td>
             </tr>
         </table>

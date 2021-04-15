@@ -24,11 +24,18 @@
                 </td>
             </tr>
             <tr>
+                <td>Director </td>
+                <td>
+                    @Model.DirectorName
+                </td>
+            </tr>
+            <tr>
                 <td>Runtime: </td>
                 <td>
                     @Model.SingleMovie.Runtime
                 </td>
             </tr>
+            
         </table>
     <div class=btn-group>
             <form asp-action="Delete" asp-route-id = "@Model.SingleMovie.MovieID">

@@ -29,10 +29,12 @@ namespace Packt.Shared
             modelBuilder.Entity<Movie>().HasKey(m => m.MovieID);
             modelBuilder.Entity<Rating>().Property(r => r.RatingID).IsRequired().HasMaxLength(20);
             modelBuilder.Entity<MovieCountry>(r => r.HasNoKey());
-            modelBuilder.Entity<MovieDirector>(r => r.HasNoKey());
+            //modelBuilder.Entity<MovieDirector>(r => r.HasNoKey());
             modelBuilder.Entity<MovieGenre>(r => r.HasNoKey());
             modelBuilder.Entity<MovieLanguage>(r => r.HasNoKey());
 
+            modelBuilder.Entity<MovieDirector>().HasKey(l => new { l.DirectorID, l.MovieID });
+            modelBuilder.Entity<Director>().HasKey(l => l.DirectorID);
 
 
     }

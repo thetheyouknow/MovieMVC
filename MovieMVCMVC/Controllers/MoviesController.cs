@@ -120,10 +120,9 @@ namespace MovieMVCMVC.Controllers
         }
     
         [HttpPost]
-        public IActionResult Create(MoviesModel model){ 
+        public IActionResult Create(MoviesModel model, string DirectorChoice){ 
 
-            List<Movie> li = db.Movies.ToList();
-            var item = li[li.Count - 1].MovieID;
+            List<Movie> li = db.Movies.ToList(); var item = li[li.Count - 1].MovieID;
 
             Movie m = new Movie();
             m.Title = model.Title;
@@ -131,6 +130,15 @@ namespace MovieMVCMVC.Controllers
             m.MovieID = item +1;
             db.Movies.Add(m);
             db.SaveChanges();
+
+            int dID = Int32.Parse(DirectorChoice);
+            MovieDirector d   = new MovieDirector();
+            d.MovieID = item +1;
+            d.DirectorID = dID;
+
+            db.MovieDirectors.Add(d);
+            db.SaveChanges();
+
 
             return View("Index", new MoviesModel{Movie = db.Movies.ToList() });
         }
@@ -140,21 +148,39 @@ namespace MovieMVCMVC.Controllers
             var item = li[li.Count - 1].MovieID;
 
             ViewData["nextID"] = item+1;
-            return View("Create");
+            return View("Create", new MoviesModel{ DirectorList = db.Directors.ToList()});
         }
 
 
         public IActionResult DeleteButton(int? id){//click the delete button and get directed to page with confirmation
             var movie = db.Movies
                 .FirstOrDefault(m => m.MovieID == id);
-            return View("Delete", new MoviesModel{SingleMovie = movie });
+            var dir = (from m in db.Movies where m.MovieID==id
+                    join d in db.MovieDirectors on m.MovieID equals d.MovieID
+                    join dd in db.Directors on d.DirectorID equals dd.DirectorID
+                    select dd.DirectorName).ToList().DefaultIfEmpty(string.Empty).First();
+            
+            return View("Delete", new MoviesModel{SingleMovie = movie, DirectorName = dir});
         }
 
         [HttpPost, ActionName("Delete")]
         public IActionResult Delete(int? id){//delete the actual record
-            var movie = (from m in db.Movies
+
+            var moviedir = (from d in db.MovieDirectors
+                        where(d.MovieID==id)
+                        select d.DirectorID).FirstOrDefault();
+
+            if(moviedir!=0){
+                var dir = (from d in db.MovieDirectors
+                        where(d.MovieID==id)
+                        select d).Single();
+                 db.MovieDirectors.Remove(dir);
+            }
+           
+            var movie = (from m in db.Movies //remove movie record last
                         where(m.MovieID==id)
                         select m).Single();
+
             db.Movies.Remove(movie);
 
             db.SaveChanges();

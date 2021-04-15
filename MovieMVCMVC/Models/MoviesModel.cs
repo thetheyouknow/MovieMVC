@@ -10,14 +10,18 @@ namespace MovieMVCMVC.Models{
         public string statement{get;set;}
         public IList<Movie> Movie {get;set;}
         public IList<MovieDirector> MovieDirector {get;set;}
-        public string DirectorName;
-        public int DirectorID;
+        public IList<Director> DirectorList{get;set;}
+        
         public Movie SingleMovie{get;set;}
 
         [Key]
         public int MovieID{get;set;}
         public string Title{get;set;}
         public int Runtime{get;set;}
+        public string DirectorName;
+
+        public int DirectorID;
+
 
 
     }
