@@ -188,11 +188,6 @@ namespace MovieMVCMVC.Controllers
 
         }
 
-
     }
-
-        
-
-        
 
 }
