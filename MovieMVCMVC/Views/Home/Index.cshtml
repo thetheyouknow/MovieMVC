@@ -49,3 +49,45 @@
         }
     </ul>
 </div>
+
+    <div>
+       @{ int cc=0;}
+       <table class="table">
+        <tbody>
+            @foreach (var item in @Model.Movies) {
+                <tr>
+                    <td>
+                        <img src="@Model.Links[cc]" alt="Sample Image" width="150px" />
+                        
+                    </td>
+                    <td>
+                       <h5> <a asp-controller = "Movies"
+                            asp-action = "Details"
+                            asp-route-id = "@item.MovieID">
+                            @item.Title
+                            </a>
+                        </h5>
+                        <h6>@item.Year</h6>
+                        <h6>
+                            @item.Runtime minutes
+                        </h6>
+                    </td>
+                    </tr>
+            ++cc;
+            }
+                    
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

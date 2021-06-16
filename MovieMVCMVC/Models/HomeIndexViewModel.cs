@@ -10,6 +10,10 @@ namespace MovieMVCMVC.Models{
 
         public IList<Movie> Movies{get;set;}
 
+        public List<string> Links{get;set;}
+
+        public List<int> Ratings{get;set;}
+
 
 
     }

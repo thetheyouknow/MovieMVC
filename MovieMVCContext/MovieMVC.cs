@@ -34,7 +34,10 @@ namespace Packt.Shared
             modelBuilder.Entity<MovieLanguage>(r => r.HasNoKey());
 
             modelBuilder.Entity<MovieDirector>().HasKey(l => new { l.DirectorID, l.MovieID });
-            modelBuilder.Entity<Director>().HasKey(l => l.DirectorID);
+            modelBuilder.Entity<Director>().HasKey(i => i.DirectorID);
+            modelBuilder.Entity<Director>().Property(dd => dd.DirectorName).IsRequired();
+            //modelBuilder.Entity<Director>().Property(dd => dd.DirectorName);
+
 
 
     }

@@ -10,8 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-  <ProjectReference Include= "..\MovieMVCContext\MovieMVCContext.csproj" />
-  <ProjectReference Include= "..\MovieMVCEntities\MovieMVCEntities.csproj" />
+  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  <ProjectReference Include="..\MovieMVCContext\MovieMVCContext.csproj" />
+  <ProjectReference Include="..\MovieMVCEntities\MovieMVCEntities.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.3" />

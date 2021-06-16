@@ -10,7 +10,7 @@ namespace Packt.Shared
         public int Netflix {get;set;}
         public int Hulu{get;set;}
         public int PrimeVideo{get;set;}
-        public int Disney{get;set;}
+        //public int Disney+{get;set;}
         
     }
 }

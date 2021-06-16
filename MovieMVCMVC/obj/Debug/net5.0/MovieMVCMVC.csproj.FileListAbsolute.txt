@@ -92,3 +92,4 @@
 /Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCMVC/obj/Debug/net5.0/Razor/Views/Movies/MovieSearch.cshtml.g.cs
 /Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCMVC/obj/Debug/net5.0/Razor/Views/Movies/Create.cshtml.g.cs
 /Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCMVC/obj/Debug/net5.0/Razor/Views/Movies/Delete.cshtml.g.cs
+/Users/savittasivapalan/Desktop/VS/MovieProject/MovieMVCMVC/bin/Debug/net5.0/Newtonsoft.Json.dll

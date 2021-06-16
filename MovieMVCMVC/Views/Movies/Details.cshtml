@@ -3,26 +3,39 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Details</h2>
+
 <div class="text-right">
             <a asp-controller = "Movies"
                     asp-action = "DeleteButton"
                     asp-route-id = "@Model.SingleMovie.MovieID">
               Delete
             </a>
- </div>
-<div >
-            <h3>Movie Title </br></h3>
-            <dd>@Model.SingleMovie.Title </dd>
-            <h3> Movie Director</h3>
-            <dd>
-                <a asp-controller = "Movies"
-                    asp-action = "MoviesForADirector"
-                    asp-route-id = "@Model.DirectorID">
-                    @Model.DirectorName</br>
-                </a>
-            </dd>
-            <h3> Runtime</h3>
-            <dd>@Model.SingleMovie.Runtime</dd>
-             
 </div>
+
+<div style="float: left; display: inline-block; ">
+
+        <img src="@Model.Image" alt="Sample Image" style="padding-right:10px;float:left;height:600px;" />
+    </div>
+    <div style="text-center ">
+                    
+        <h1> @Model.SingleMovie.Title</h1>
+        <h6><a asp-controller = "Movies"
+            asp-action = "MoviesForADirector"
+            asp-route-id = "@Model.DirectorID">
+            @Model.DirectorName</br>
+        </a></h6>
+        <p class="text-center">
+            <h6>@Model.SingleMovie.Runtime min </h6>
+        </p>
+
+    <div class="d-flex justify-content-center">
+        <div class="wrapper">
+       <p class=" mb-1 text-center d-flex"></i>
+                    @Model.Description
+        </p>
+        </div>
+    </div>
+
+</div>
+
+

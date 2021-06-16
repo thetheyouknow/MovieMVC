@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MovieMVCMVC.Models;
 using Packt.Shared;
+using System.Net;
+using System.Net.Http;
+using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace MovieMVCMVC.Controllers
 {
@@ -22,11 +26,30 @@ namespace MovieMVCMVC.Controllers
 
         public IActionResult Index(string searchName)
         {
+            var k = (from kk in db.Ratings
+                    orderby kk.RottenTomatoes descending
+                    where (kk.RottenTomatoes > 0 ) 
+                    select kk).Take(20);
+
+            var r = db.Ratings.OrderByDescending(rr => rr.RottenTomatoes).Take(20);
+            var m  = (from o in db.Movies 
+                    join rr in k on  o.MovieID  equals rr.RatingID
+                    select o).ToList();
+
+            var r2 = from a in k
+                    select a.RottenTomatoes;
+            List<string> s = new List<string>();
+
+            foreach( var one in m){
+                s.Add((getImage(one.Title).Result));
+            };
+
                 var model = new HomeIndexViewModel{
-                    //VisitorCount = (new Random()).Next(1,1001),
                     Genres = db.Genres.ToList(),
                     Languages = db.Languages.ToList(),
-                    Movies = db.Movies.ToList(),
+                    Movies = m,
+                    Links=s,
+                    Ratings = r2.ToList()
                 };
             
             return View(model);
@@ -43,13 +66,6 @@ namespace MovieMVCMVC.Controllers
             return View(model);
         }
 
-        public IActionResult RatingSorting(){
-            var query  = (from m in db.Movies
-                        join r in db.Ratings on m.MovieID equals r.RatingID
-                        orderby r.RottenTomatoes
-                        select new {m, r});
-            return View("Index");
-        }
         //[Route("private")]
         public IActionResult Privacy()
         {
@@ -61,15 +77,34 @@ namespace MovieMVCMVC.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-    }
+   
+   public async Task<string> getImage(string title){
+            string ipath;
+            var baseAddress = new Uri("http://api.themoviedb.org/3/");
+            using (var httpClient = new HttpClient { BaseAddress = baseAddress })
+            {     
+                httpClient.DefaultRequestHeaders.TryAddWithoutValidation("accept", "application/json");
+
+                using (var response = await httpClient.GetAsync("search/movie?api_key=8952d55f994145a828d53d9ee73af551&query=" + title))
+                {
+                    string responseData = await response.Content.ReadAsStringAsync();
+
+                    var model = JsonConvert.DeserializeObject<original>(responseData);
+
+                   if (model.results.Count()>0){
+                        ipath = model.results[0].poster_path;// gets the poster path for the movie
+                    }
+                    else{
+                        ipath = "none";
+                    }
+
+                }
+            }
+            string img= "https://image.tmdb.org/t/p/original" + ipath;
+            return img;
+
+        }
+   
+   
+   }
 }
-
-
-/*
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core. </a>.</p>
-    <p class="lead">
-        We have had @Model.VisitorCount visitors this month.
-    </p>
-</div>*/
